@@ -199,6 +199,7 @@ backlinks-n8n/
 ├── src/              Los 36 prompts y nodos Code del workflow, uno por archivo
 ├── docs/             Arquitectura, instalación, ramas, tablas y guías
 ├── AGENTS.md         Contexto para asistentes de IA que trabajen con el repo
+├── CONTRIBUTING.md   Cómo reportar problemas y enviar cambios
 ├── ROADMAP.md        Mejoras previstas de la automatización
 └── LICENSE
 ```
@@ -219,9 +220,10 @@ backlinks-n8n/
 
 ## Contribuir
 
-Las contribuciones son bienvenidas. Antes de abrir un *pull request*, lee
-[docs/desarrollo.md](docs/desarrollo.md): los workflows del repo deben llevar marcadores en vez de
-IDs y **no pueden contener datos de tu instancia** (correos, dominios, IDs ni credenciales).
+Las contribuciones son bienvenidas. Lee la [guía de contribución](CONTRIBUTING.md) antes de abrir un
+issue o un *pull request*: los PR van a la rama `develop`, y los workflows del repo deben llevar
+marcadores en vez de IDs y **no pueden contener datos de tu instancia** (correos, dominios, IDs ni
+credenciales).
 
 ## Licencia
 

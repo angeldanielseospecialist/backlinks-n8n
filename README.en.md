@@ -202,6 +202,7 @@ backlinks-n8n/
 ├── src/              The workflow's 36 prompts and Code nodes, one file each
 ├── docs/             Architecture, installation, branches, tables and guides (Spanish)
 ├── AGENTS.md         Context for AI assistants working with the repo
+├── CONTRIBUTING.md   How to report issues and submit changes
 ├── ROADMAP.md        Planned improvements to the automation
 └── LICENSE
 ```
@@ -224,9 +225,10 @@ The detailed documentation is in Spanish:
 
 ## Contributing
 
-Contributions are welcome. Before opening a pull request, read
-[docs/desarrollo.md](docs/desarrollo.md): workflows in the repo must use placeholders instead of
-IDs and **must not contain data from your instance** (emails, domains, IDs or credentials).
+Contributions are welcome. Read the [contributing guide](CONTRIBUTING.md) before opening an issue
+or a pull request: pull requests target the `develop` branch, and workflows in the repo must use
+placeholders instead of IDs and **must not contain data from your instance** (emails, domains, IDs
+or credentials).
 
 ## License
 
