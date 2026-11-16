@@ -1,0 +1,183 @@
+{
+  "name": "Errores en backlinks",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e00bac3c-75ca-48aa-9620-6bfea27b9d8d",
+      "name": "Error de otro workflow",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "__DATA_TABLE_backlinks_log__",
+          "cachedResultName": "backlinks_log"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "workflow": "={{ $json.workflow.name }}",
+            "id_ejecucion": "={{ $json.execution.id }}",
+            "accion": "error",
+            "entidad": "={{ $json.execution.lastNodeExecuted }}",
+            "resultado": "={{ $json.execution.error.message }}",
+            "coste_estimado": 0,
+            "url_ejecucion": "={{ $json.execution.url }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "workflow",
+              "displayName": "workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "id_ejecucion",
+              "displayName": "id_ejecucion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "accion",
+              "displayName": "accion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "entidad",
+              "displayName": "entidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "resultado",
+              "displayName": "resultado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "coste_estimado",
+              "displayName": "coste_estimado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "url_ejecucion",
+              "displayName": "url_ejecucion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "e2dd0350-ecc6-4163-893c-ffe1e3abca4f",
+      "name": "Guardar en backlinks_log",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "#backlinks"
+        },
+        "text": "=:rotating_light: *Error en el workflow* `{{ $json.workflow }}`\n• Nodo que falló: `{{ $json.entidad }}`\n• Mensaje: {{ $json.resultado }}\n• Ejecución: {{ $json.url_ejecucion }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "54b5b2a9-1b58-40a7-ace4-7d7645f508e3",
+      "name": "Avisar en Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        0
+      ],
+      "webhookId": "68458325-5786-44b2-bd0f-1da491c0c7cb",
+      "credentials": {
+        "slackApi": {
+          "id": "__CREDENTIAL_SLACK__",
+          "name": "Slack Bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error de otro workflow": {
+      "main": [
+        [
+          {
+            "node": "Guardar en backlinks_log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar en backlinks_log": {
+      "main": [
+        [
+          {
+            "node": "Avisar en Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "tags": []
+}

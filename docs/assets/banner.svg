@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="titulo desc">
+  <title id="titulo">backlinks-n8n</title>
+  <desc id="desc">Plantilla open source para n8n: prospección, cualificación y outreach de backlinks en 7 ramas, con aprobación humana en cada paso.</desc>
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#1B1236"/>
+    </linearGradient>
+    <radialGradient id="brillo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#EA4B71" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#EA4B71" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="puntos" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#FFFFFF" fill-opacity="0.07"/>
+    </pattern>
+    <linearGradient id="borde" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EA4B71"/>
+      <stop offset="1" stop-color="#FF9A6B"/>
+    </linearGradient>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#EA4B71"/>
+    </marker>
+    <clipPath id="marco"><rect width="1280" height="640" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#marco)" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <!-- Fondo -->
+    <rect width="1280" height="640" fill="url(#fondo)"/>
+    <rect width="1280" height="640" fill="url(#puntos)"/>
+    <circle cx="1130" cy="90" r="320" fill="url(#brillo)"/>
+    <circle cx="120" cy="640" r="260" fill="url(#brillo)" opacity="0.5"/>
+
+    <!-- Etiqueta superior -->
+    <rect x="80" y="64" width="330" height="36" rx="18" fill="#EA4B71" fill-opacity="0.12" stroke="#EA4B71" stroke-opacity="0.55"/>
+    <text x="245" y="88" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="2.4" fill="#FF8FA8">PLANTILLA OPEN SOURCE · n8n</text>
+
+    <!-- Título y subtítulo -->
+    <text x="76" y="198" font-size="88" font-weight="800" fill="#FFFFFF" letter-spacing="-2">backlinks<tspan fill="url(#borde)">-n8n</tspan></text>
+    <text x="80" y="252" font-size="27" fill="#D5DCEA">Prospección, cualificación y outreach de backlinks, automatizados.</text>
+    <text x="80" y="292" font-size="19" fill="#8E9AB5">7 ramas · 6 Data Tables · aprobación humana en cada paso</text>
+
+    <!-- Flujo de ramas A → G -->
+    <g font-size="15">
+      <!-- conectores -->
+      <g stroke="#EA4B71" stroke-width="2.5" marker-end="url(#flecha)" opacity="0.9">
+        <line x1="218" y1="418" x2="242" y2="418"/>
+        <line x1="382" y1="418" x2="406" y2="418"/>
+        <line x1="546" y1="418" x2="570" y2="418"/>
+        <line x1="710" y1="418" x2="734" y2="418"/>
+        <line x1="874" y1="418" x2="898" y2="418"/>
+        <line x1="1038" y1="418" x2="1062" y2="418"/>
+      </g>
+
+      <!-- nodos: x = 80 + i·164, ancho 136 -->
+      <g>
+        <rect x="80" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="148" cy="392" r="20" fill="#EA4B71"/>
+        <text x="148" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">A</text>
+        <text x="148" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Prospección</text>
+        <text x="148" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">lunes</text>
+      </g>
+      <g>
+        <rect x="244" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="312" cy="392" r="20" fill="#EA4B71"/>
+        <text x="312" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">B</text>
+        <text x="312" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Cualificación</text>
+        <text x="312" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">diario</text>
+      </g>
+      <g>
+        <rect x="408" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="476" cy="392" r="20" fill="#EA4B71"/>
+        <text x="476" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">C</text>
+        <text x="476" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Envío</text>
+        <text x="476" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">cada hora</text>
+      </g>
+      <g>
+        <rect x="572" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="640" cy="392" r="20" fill="#EA4B71"/>
+        <text x="640" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">D</text>
+        <text x="640" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Bandeja</text>
+        <text x="640" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">cada 15 min</text>
+      </g>
+      <g>
+        <rect x="736" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="804" cy="392" r="20" fill="#EA4B71"/>
+        <text x="804" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">E</text>
+        <text x="804" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Follow-up</text>
+        <text x="804" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">diario</text>
+      </g>
+      <g>
+        <rect x="900" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="968" cy="392" r="20" fill="#EA4B71"/>
+        <text x="968" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">F</text>
+        <text x="968" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Monitor</text>
+        <text x="968" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">domingo</text>
+      </g>
+      <g>
+        <rect x="1064" y="352" width="136" height="132" rx="18" fill="#121A2E" stroke="#2C3655" stroke-width="1.5"/>
+        <circle cx="1132" cy="392" r="20" fill="#EA4B71"/>
+        <text x="1132" y="399" text-anchor="middle" font-size="19" font-weight="800" fill="#FFFFFF">G</text>
+        <text x="1132" y="440" text-anchor="middle" font-weight="600" fill="#E6EBF5">Resumen</text>
+        <text x="1132" y="463" text-anchor="middle" font-size="13" fill="#8E9AB5">18:00</text>
+      </g>
+    </g>
+
+    <!-- Integraciones -->
+    <g font-size="14" fill="#C9D2E3" text-anchor="middle">
+      <rect x="80" y="540" width="80" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="120" y="562">Ahrefs</text>
+      <rect x="172" y="540" width="80" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="212" y="562">Hunter</text>
+      <rect x="264" y="540" width="88" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="308" y="562">SerpAPI</text>
+      <rect x="364" y="540" width="80" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="404" y="562">Claude</text>
+      <rect x="456" y="540" width="72" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="492" y="562">Slack</text>
+      <rect x="540" y="540" width="72" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="576" y="562">Gmail</text>
+      <rect x="624" y="540" width="132" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.04" stroke="#2C3655"/>
+      <text x="690" y="562">Google Sheets</text>
+    </g>
+    <text x="1200" y="563" text-anchor="end" font-size="14" fill="#8E9AB5">MIT · Español</text>
+  </g>
+</svg>

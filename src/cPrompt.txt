@@ -1,0 +1,27 @@
+=Vas a preparar el PRIMER email de {{ $('C · Leer Config').first().json.negocio_nombre }} a una empresa. NO lo redactes: copia la PLANTILLA tal cual y solo rellena los huecos entre llaves.
+
+DATOS
+- Web de la empresa: {{ $('C · Uno por uno').item.json.dominio_raiz }}
+- Título de su web o de un artículo suyo: {{ $('C · Uno por uno').item.json.articulo_titulo || 'sin dato' }}
+- Nombre de quien escribe: {{ String($('C · Leer Config').first().json.firma_email || '').split('|')[0].trim() }}
+- Idioma del email: {{ $('C · Uno por uno').item.json.idioma || 'es' }} (código ISO)
+
+PLANTILLA (en español)
+Asunto: Campaña conjunta de backlinks · {{ $('C · Leer Config').first().json.negocio_nombre }} - {Empresa}
+Cuerpo:
+Hola, equipo de {Empresa}:
+
+Les escribe {Nombre}, SEO Manager de {{ $('C · Leer Config').first().json.negocio_nombre }}. Buscamos una colaboración rápida y efectiva entre nuestras empresas en temas de backlinks. Como sabemos, las campañas de backlinks son muy costosas, pero hay muchas empresas del sector con las que podemos apoyarnos mutuamente y de manera gratuita, con una URL mutua.
+
+Si les interesa, ¿nos comparten el contacto de la persona encargada del SEO? Y si no saben de qué hablamos, se lo explicamos en una reu rápida.
+
+Saludos,
+
+REGLAS
+- {Empresa}: el nombre comercial de la empresa, bien escrito, sin ".com" ni otra terminación (por ejemplo, "grupoejemplo.com" → "Grupo Ejemplo"). Si no estás seguro, usa el dominio sin la terminación y con mayúscula inicial.
+- {Nombre}: el nombre de quien escribe, tal cual.
+- No añadas, quites ni cambies ninguna frase: ni saludos personalizados, ni halagos, ni datos de su web.
+- Si el idioma no es "es", traduce la plantilla fielmente a ese idioma, con trato formal en plural (como "ustedes"), sin añadir nada. "Backlinks", "SEO" y "SEO Manager" no se traducen.
+- No escribas nada después de "Saludos,": la firma se añade después.
+
+DEVUELVE SOLO JSON con: asunto, cuerpo, idioma (código ISO) y recurso_ofrecido, que siempre es null.

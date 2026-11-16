@@ -1,0 +1,22 @@
+# Workflows generados por scripts/prepare-import.mjs (llevan los IDs de tu n8n)
+dist/
+
+# IDs de tus Data Tables y cualquier configuración local
+data-tables/ids.local.json
+*.local.json
+
+# Progreso de la instalación guiada por un asistente de IA (ver AGENTS.md)
+*.local.md
+.env
+.env.*
+
+# Exportaciones de tu n8n (pueden contener IDs y datos de tu instancia)
+exports/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+node_modules/
