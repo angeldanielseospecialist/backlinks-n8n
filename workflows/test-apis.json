@@ -1,0 +1,204 @@
+{
+  "name": "Test APIs",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "01adfcca-d767-4e8a-9882-26fae2a9053d",
+      "name": "Ejecutar prueba",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        496
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.ahrefs.com/v3/subscription-info/limits-and-usage",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "e779956e-3b64-49c3-9461-73e715753871",
+      "name": "Ahrefs: limites y consumo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        288,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "__CREDENTIAL_AHREFS__",
+          "name": "Ahrefs API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.hunter.io/v2/account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "7d8aec16-fe62-4fb5-9e3a-1b08b24f2e8a",
+      "name": "Hunter: estado de la cuenta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        288,
+        192
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "__CREDENTIAL_HUNTER__",
+          "name": "Hunter API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "__DATA_TABLE_backlinks_config__",
+          "cachedResultName": "backlinks_config"
+        },
+        "returnAll": true
+      },
+      "id": "2429dd6b-99d0-4419-990f-f43214efbdf3",
+      "name": "Data table: leer backlinks_config",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        304,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://serpapi.com/account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "29fae425-6faf-4bee-9057-924ad7513aac",
+      "name": "SerpAPI: estado de la cuenta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        288,
+        976
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "__CREDENTIAL_SERPAPI__",
+          "name": "SerpAPI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Responde solo: OK",
+        "batching": {}
+      },
+      "id": "137d80ee-2fd5-45ff-832f-f0ac695aa753",
+      "name": "Claude: responder OK",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        224,
+        384
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-5-5",
+          "mode": "id"
+        },
+        "options": {
+          "maxTokensToSample": 1024,
+          "thinkingMode": "adaptive",
+          "effort": "low"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.5,
+      "position": [
+        272,
+        576
+      ],
+      "id": "615516cd-9b34-4098-934b-7b6d3291ce61",
+      "name": "Modelo Claude",
+      "credentials": {
+        "anthropicApi": {
+          "id": "__CREDENTIAL_ANTHROPIC__",
+          "name": "Anthropic API Backlinks"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ejecutar prueba": {
+      "main": [
+        [
+          {
+            "node": "Ahrefs: limites y consumo",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Hunter: estado de la cuenta",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Claude: responder OK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Data table: leer backlinks_config",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SerpAPI: estado de la cuenta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Modelo Claude": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Claude: responder OK",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "tags": []
+}

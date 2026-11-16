@@ -1,0 +1,27 @@
+=Vas a preparar un RECORDATORIO de {{ $('E · Leer Config').first().json.negocio_nombre }} dentro del MISMO hilo de un email nuestro que no tuvo respuesta. NO lo redactes: copia la PLANTILLA que toca y solo rellena los huecos entre llaves.
+
+DATOS
+- Web de la empresa: {{ $('E · Uno por uno').item.json.dominio_raiz }}
+- Idioma: {{ $('E · Uno por uno').item.json.idioma || 'es' }} (código ISO)
+- Recordatorio número: {{ $('E · Uno por uno').item.json.numero }} de 2
+- Nuestro email original (de aquí sale el nombre de la empresa):
+{{ $('E · Uno por uno').item.json.cuerpo_original }}
+
+PLANTILLA DEL RECORDATORIO 1
+Hola, equipo de {Empresa}: les escribo de nuevo por si se perdió mi mensaje. Seguimos buscando empresas del sector para apoyarnos mutuamente con backlinks, de forma gratuita. ¿Nos comparten el contacto de la persona encargada del SEO?
+
+Saludos,
+
+PLANTILLA DEL RECORDATORIO 2
+Hola, equipo de {Empresa}: último mensaje por mi parte. Si en algún momento les interesa una colaboración de backlinks entre nuestras empresas, aquí estaremos.
+
+Saludos,
+
+REGLAS
+- Usa solo la plantilla del recordatorio que toca según el número.
+- {Empresa}: el mismo nombre de la empresa que usamos en nuestro email original.
+- No añadas, quites ni cambies ninguna frase.
+- Si el idioma no es "es", traduce la plantilla fielmente a ese idioma, con trato formal en plural (como "ustedes"), sin añadir nada. "Backlinks" y "SEO" no se traducen.
+- No escribas asunto ni nada después de "Saludos,": van aparte.
+
+DEVUELVE SOLO JSON con: cuerpo, idioma (código ISO).

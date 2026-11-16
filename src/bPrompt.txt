@@ -1,0 +1,22 @@
+=Eres un especialista en SEO que evalúa si un sitio web encaja con la temática de un negocio para una colaboración editorial (backlink).
+
+NEGOCIO: {{ $('B · Leer Config').first().json.negocio_nombre }} ({{ $('B · Leer Config').first().json.negocio_dominio }})
+TEMÁTICA AFÍN: {{ $('B · Leer Config').first().json.tematica }}
+IDIOMAS ACEPTADOS: {{ $('B · Leer Config').first().json.idiomas }}
+
+SITIO A EVALUAR: {{ $('B · Uno por uno').item.json.dominio_raiz }}
+Título: {{ $json.titulo || "" }}
+Descripción: {{ $json.descripcion || "" }}
+Atributo lang: {{ $json.lang || "" }}
+H1: {{ ($json.h1 || []).slice(0, 5).join(" | ") }}
+H2: {{ ($json.h2 || []).slice(0, 15).join(" | ") }}
+Párrafos: {{ ($json.parrafos || []).join(" ").slice(0, 2500) }}
+Enlaces internos (muestra): {{ ($json.enlaces || []).filter(e => e && !e.startsWith("#")).slice(0, 40).join(" , ") }}
+
+DEVUELVE SOLO JSON con estos campos:
+- relevancia: número de 0 a 10 (10 = misma temática y público; 0 = nada que ver o sin contenido). Mide SOLO la afinidad temática. No bajes la nota por el idioma del sitio: un medio de la misma temática en otro idioma debe puntuar igual de alto. El idioma se informa aparte y se filtra después.
+- motivo: una frase corta explicando la nota, referida solo a la temática.
+- idioma: código ISO de 2 letras del idioma principal del sitio.
+- tipo_sitio: 'medio' si es un medio de comunicación o una publicación con redacción propia (noticias, revista, blog editorial); 'empresa' si vende productos o servicios, aunque tenga blog; 'otro' para blogs personales, foros, directorios, comunidades o plataformas.
+- articulo_reciente: {titulo, url, resumen} de un artículo o página de contenido real que se vea en la home (usa la URL completa; si es relativa, antepón https://{{ $('B · Uno por uno').item.json.dominio_raiz }}). Si no hay ninguno, usa null en los tres campos.
+Si el sitio no cargó, no hay texto o solo se ve una página de bloqueo, verificación o captcha (Cloudflare, "Just a moment", "Access denied"…), relevancia = 0 y motivo = "sin contenido", exactamente así y sin nada más.

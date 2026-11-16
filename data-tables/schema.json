@@ -1,0 +1,439 @@
+{
+  "$comment": "Las 6 Data Tables de backlinks-n8n. id, createdAt y updatedAt los crea n8n solo. Tipos: string, number, boolean, date.",
+  "tables": [
+    {
+      "name": "backlinks_config",
+      "columns": [
+        {
+          "name": "negocio_nombre",
+          "type": "string"
+        },
+        {
+          "name": "negocio_dominio",
+          "type": "string"
+        },
+        {
+          "name": "competidores",
+          "type": "string"
+        },
+        {
+          "name": "mercados",
+          "type": "string"
+        },
+        {
+          "name": "idiomas",
+          "type": "string"
+        },
+        {
+          "name": "tematica",
+          "type": "string"
+        },
+        {
+          "name": "lista_bloqueo",
+          "type": "string"
+        },
+        {
+          "name": "umbral_dr_min",
+          "type": "number"
+        },
+        {
+          "name": "umbral_trafico_min",
+          "type": "number"
+        },
+        {
+          "name": "umbral_refdomains_min",
+          "type": "number"
+        },
+        {
+          "name": "umbral_ratio_max",
+          "type": "number"
+        },
+        {
+          "name": "granja_dr",
+          "type": "number"
+        },
+        {
+          "name": "granja_trafico",
+          "type": "number"
+        },
+        {
+          "name": "umbral_relevancia_min",
+          "type": "number"
+        },
+        {
+          "name": "limite_diario",
+          "type": "number"
+        },
+        {
+          "name": "ventana_envio",
+          "type": "string"
+        },
+        {
+          "name": "dias_follow_up",
+          "type": "string"
+        },
+        {
+          "name": "mailbox",
+          "type": "string"
+        },
+        {
+          "name": "canal_slack",
+          "type": "string"
+        },
+        {
+          "name": "modo_prueba",
+          "type": "boolean"
+        },
+        {
+          "name": "email_pruebas",
+          "type": "string"
+        },
+        {
+          "name": "limite_cualificacion_diario",
+          "type": "number"
+        },
+        {
+          "name": "hunter_creditos_mes",
+          "type": "number"
+        },
+        {
+          "name": "hunter_emails_por_dominio",
+          "type": "number"
+        },
+        {
+          "name": "limite_cola_prospectos",
+          "type": "number"
+        },
+        {
+          "name": "busquedas_serpapi",
+          "type": "string"
+        },
+        {
+          "name": "firma_email",
+          "type": "string"
+        },
+        {
+          "name": "texto_baja",
+          "type": "string"
+        },
+        {
+          "name": "gran_prensa_dr_min",
+          "type": "number"
+        },
+        {
+          "name": "gran_prensa_trafico_min",
+          "type": "number"
+        },
+        {
+          "name": "pyme_dr_min",
+          "type": "number"
+        },
+        {
+          "name": "pyme_dr_max",
+          "type": "number"
+        },
+        {
+          "name": "pausa_min_envio",
+          "type": "number"
+        },
+        {
+          "name": "pausa_max_envio",
+          "type": "number"
+        },
+        {
+          "name": "blog_api",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "backlinks_dominios",
+      "columns": [
+        {
+          "name": "dominio_raiz",
+          "type": "string"
+        },
+        {
+          "name": "fuente",
+          "type": "string"
+        },
+        {
+          "name": "estado",
+          "type": "string"
+        },
+        {
+          "name": "motivo",
+          "type": "string"
+        },
+        {
+          "name": "en_bloqueo",
+          "type": "boolean"
+        },
+        {
+          "name": "ya_enlaza",
+          "type": "boolean"
+        },
+        {
+          "name": "dr",
+          "type": "number"
+        },
+        {
+          "name": "trafico_organico",
+          "type": "number"
+        },
+        {
+          "name": "dominios_referencia",
+          "type": "number"
+        },
+        {
+          "name": "dominios_enlazados",
+          "type": "number"
+        },
+        {
+          "name": "ratio_enlazados",
+          "type": "number"
+        },
+        {
+          "name": "relevancia",
+          "type": "number"
+        },
+        {
+          "name": "motivo_relevancia",
+          "type": "string"
+        },
+        {
+          "name": "idioma",
+          "type": "string"
+        },
+        {
+          "name": "articulo_titulo",
+          "type": "string"
+        },
+        {
+          "name": "articulo_url",
+          "type": "string"
+        },
+        {
+          "name": "articulo_resumen",
+          "type": "string"
+        },
+        {
+          "name": "nota",
+          "type": "string"
+        },
+        {
+          "name": "tipo_sitio",
+          "type": "string"
+        },
+        {
+          "name": "segmento",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "backlinks_contactos",
+      "columns": [
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "nombre",
+          "type": "string"
+        },
+        {
+          "name": "cargo",
+          "type": "string"
+        },
+        {
+          "name": "dominio_id",
+          "type": "number"
+        },
+        {
+          "name": "dominio_raiz",
+          "type": "string"
+        },
+        {
+          "name": "idioma",
+          "type": "string"
+        },
+        {
+          "name": "verificado",
+          "type": "string"
+        },
+        {
+          "name": "estado",
+          "type": "string"
+        },
+        {
+          "name": "n_follow_ups",
+          "type": "number"
+        },
+        {
+          "name": "fecha_ultimo_envio",
+          "type": "date"
+        },
+        {
+          "name": "fecha_reintento",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "backlinks_mensajes",
+      "columns": [
+        {
+          "name": "contacto_id",
+          "type": "number"
+        },
+        {
+          "name": "dominio_raiz",
+          "type": "string"
+        },
+        {
+          "name": "destinatario",
+          "type": "string"
+        },
+        {
+          "name": "direccion",
+          "type": "string"
+        },
+        {
+          "name": "tipo",
+          "type": "string"
+        },
+        {
+          "name": "idioma",
+          "type": "string"
+        },
+        {
+          "name": "asunto",
+          "type": "string"
+        },
+        {
+          "name": "cuerpo",
+          "type": "string"
+        },
+        {
+          "name": "recurso_ofrecido",
+          "type": "string"
+        },
+        {
+          "name": "thread_id",
+          "type": "string"
+        },
+        {
+          "name": "message_id",
+          "type": "string"
+        },
+        {
+          "name": "revisado_por",
+          "type": "string"
+        },
+        {
+          "name": "clasificacion",
+          "type": "string"
+        },
+        {
+          "name": "confianza",
+          "type": "number"
+        },
+        {
+          "name": "resumen",
+          "type": "string"
+        },
+        {
+          "name": "borrador_respuesta",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "backlinks_enlaces",
+      "columns": [
+        {
+          "name": "dominio_id",
+          "type": "number"
+        },
+        {
+          "name": "contacto_id",
+          "type": "number"
+        },
+        {
+          "name": "dominio_raiz",
+          "type": "string"
+        },
+        {
+          "name": "url_origen",
+          "type": "string"
+        },
+        {
+          "name": "url_destino",
+          "type": "string"
+        },
+        {
+          "name": "anchor",
+          "type": "string"
+        },
+        {
+          "name": "rel",
+          "type": "string"
+        },
+        {
+          "name": "indexable",
+          "type": "boolean"
+        },
+        {
+          "name": "estado",
+          "type": "string"
+        },
+        {
+          "name": "fecha_conseguido",
+          "type": "date"
+        },
+        {
+          "name": "ultima_comprobacion",
+          "type": "date"
+        },
+        {
+          "name": "nota",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "backlinks_log",
+      "columns": [
+        {
+          "name": "workflow",
+          "type": "string"
+        },
+        {
+          "name": "id_ejecucion",
+          "type": "string"
+        },
+        {
+          "name": "accion",
+          "type": "string"
+        },
+        {
+          "name": "entidad",
+          "type": "string"
+        },
+        {
+          "name": "resultado",
+          "type": "string"
+        },
+        {
+          "name": "coste_estimado",
+          "type": "number"
+        },
+        {
+          "name": "url_ejecucion",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

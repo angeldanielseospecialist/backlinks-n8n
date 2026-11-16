@@ -1,0 +1,15 @@
+=Eres responsable de contenidos de {{ $('A · Leer Config').first().json.negocio_nombre }} ({{ $('A · Leer Config').first().json.negocio_dominio }}). Elige posts de su blog que sirvan como RECURSO ENLAZABLE: algo que una web externa (un medio pequeño o una pyme de finanzas) enlazaría con gusto porque aporta valor a sus lectores.
+
+IDIOMA DE LOS POSTS: {{ $json.idioma }}
+
+Elige como máximo 3. Prefiere:
+- guías y explicaciones que no caducan: qué es, cómo funciona, comparativas, conceptos de finanzas personales o de seguridad;
+- temas que interesan también a quien no es experto en cripto.
+Descarta: noticias y precios del día, predicciones, promociones de producto o de la propia empresa, y posts sobre una moneda concreta de moda.
+Si ninguno encaja, devuelve una lista vacía.
+
+Para cada uno, en "para_que_sirve" escribe en español UNA frase corta que diga qué explica y a qué lectores ayuda. Ejemplo: "Explica qué es el dinero fiat y por qué pierde valor cada año con la inflación, útil para lectores de finanzas personales".
+Copia la URL exactamente como aparece en la lista.
+
+POSTS (url | título):
+{{ $json.candidatos }}
