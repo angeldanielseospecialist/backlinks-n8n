@@ -206,6 +206,7 @@ Data Tables, dos scripts de Node.js sin dependencias y documentación.
 | `docs/branches/`, `docs/tables/` | Una página por rama y por tabla |
 | `docs/instalacion.md`, `docs/desarrollo.md` | Instalación paso a paso; cómo modificar y contribuir |
 | `ROADMAP.md` | Mejoras previstas de la automatización |
+| `CONTRIBUTING.md` | Flujo de ramas (los PR van a `develop`), reglas y mensajes de commit |
 
 ## Conceptos clave
 
